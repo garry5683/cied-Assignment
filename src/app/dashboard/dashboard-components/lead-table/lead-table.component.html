@@ -1,0 +1,47 @@
+<div class="d-flex row mb-3">
+    <h4 class=" text-black col-lg-2 col-md-12">Recently active leads</h4>
+    <input type="text" class="col-lg-5 col-md-12" [(ngModel)]="searchString" placeholder="  Search Leads">
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">Lead Name</th>
+                        <th class="text-dark font-medium fs-4">Date Added</th>
+                        <th class="text-dark font-medium fs-4">Current State</th>
+                        <th class="text-dark font-medium fs-4">Probability</th>
+                        <th class="text-dark font-medium fs-4">Team Size</th>
+                        <th class="text-dark font-medium fs-4">Location</th>
+                        <th class="text-dark font-medium fs-4">Revenue </th>
+                        <th class="text-dark font-medium fs-4">Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let ts of dataList | searchName : searchString'>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img [src]=ts.logo alt="user" width="35" class="rounded-3">
+                                <div class="ms-3">
+                                    <td class="fs-4">{{ts.Lead_Name}}</td>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fs-4">{{ts.Date_Added | date: 'dd/MMM/yyyy'}}</td>
+                        <td class="fs-4">{{ts.Current_State}}</td>
+                        <td class="fs-4" *ngIf="0<=+ts.Probability && +ts.Probability<=24"><span class="badge rounded-pill pilllow ">{{ts.Probability}}</span></td>
+                        <td class="fs-4" *ngIf="25<=+ts.Probability && +ts.Probability<=49"><span class="badge rounded-pill pillmedium ">{{ts.Probability}}</span></td>
+                        <td class="fs-4" *ngIf="50<=+ts.Probability && +ts.Probability<=99"><span class="badge rounded-pill pillhigh">{{ts.Probability}}</span></td>
+                        <td class="fs-4">{{ts.Team_Size}}</td>
+                        <td class="fs-4">{{ts.Location}}</td>
+                        <td class="fs-4">{{ts.Revenue_}}</td>
+                        <td class="fs-4">{{ts.Category}}</td>                        
+                    </tr>              
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>  

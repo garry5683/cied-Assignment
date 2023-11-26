@@ -1,0 +1,41 @@
+<div class="d-flex row mb-3">
+    <h4 class="text-black col-lg-4 col-md-12">Probabilities</h4>
+</div>
+<div class="col justify-content-md-center" >
+    <div class="col">
+        <div class="rounded-3 mt-4">    
+
+            <div class="progress-bg">
+                <div class="progress-bar overflow-visible" style="background-color: #C9ECDC;" [ngStyle]="{'width.%':dataList.high_percent}">
+                    <span class="raised ms-3 overflow-visible">{{dataList.high_percent}}%&nbsp;High probability to win&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="ms-4">{{dataList.high_count}} Leads</span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" rounded-3 mt-4">    
+  
+            <div class="progress-bg">   
+                <div class="progress-bar overflow-visible" style="background-color: #F9D8F8;" [ngStyle]="{'width.%':dataList.medium_percent}">
+                    <span class="raised ms-3 overflow-visible">{{dataList.medium_percent}}%&nbsp;Medium probability to win&nbsp;&nbsp;&nbsp;
+                    <span class="ms-2">{{dataList.medium_count}} Leads</span></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" rounded-3 mt-4">    
+
+            <div class="progress-bg">
+                <div class="progress-bar overflow-visible" style="background-color: #F8CDD9;" [ngStyle]="{'width.%':dataList.low_percent}">
+                    <span class="raised ms-3 overflow-visible">{{dataList.low_percent}}%&nbsp;Low probability to win &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="ms-3">{{dataList.low_count}} Leads</span>
+                    </span>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+
+<div
+  id="main-wrapper"
+  dir="ltr"
+  data-theme="light"
+  data-layout="vertical"
+  [attr.data-sidebartype]="sidebartype"
+  data-sidebar-position="absolute"
+  data-header-position="absolute"
+  data-boxed-layout="full"
+>
+
+  <header class="topbar bg-dark" >
+    <nav class="d-flex top-navbar navbar-expand-lg navbar-light">
+      <div
+        class="navbar-header bg-dark"
+        [ngClass]="expandLogo ? 'expand-logo' : ''">
+
+        <div class="navbar-brand  text-light">
+          <b class="logo-icon">
+            <img
+              src="assets\images\icons\meta.png"
+              alt="homepage"
+              class="light-logo"
+            />
+          </b>
+          <ul class="navbar-nav float-start me-auto bg-dark">
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-dark" href="/dashboard"> Dashboard </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-dark" href="/dashboard"> Leads </a>
+          </li>
+          </ul>
+        </div>
+
+        <a
+          class="topbartoggler d-block d-lg-none waves-effect waves-light"
+          href="javascript:void(0)"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed"
+        >
+          <i class="bi bi-text-right fs-6"></i>
+        </a>
+      </div>
+
+      <div
+        class="navbar-collapse collapse bg-dark"
+        id="navbarSupportedContent"
+        data-navbarbg="skin6"
+        [ngbCollapse]="!isCollapsed"
+      >
+        <app-navigation
+          (toggleSidebar)="toggleSidebarType()"
+          class="w-100"
+        ></app-navigation>
+      </div>
+    </nav>
+  </header>
+
+    <div class="container-fluid">
+
+      <router-outlet></router-outlet>
+
+    <footer class="footer text-center">
+      All Rights Reserved by CIED. Designed and Developed by
+      <a href="#">Garry David</a>.
+    </footer>
+  </div>
+</div>

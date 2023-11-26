@@ -1,0 +1,18 @@
+<div class="d-flex row mb-4">
+    <h4 class=" text-black col-lg-2 col-md-12">Graph</h4>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div style="text-align:center;font-size: 2px;">
+            <apx-chart
+              [series]="dataList.series"
+              [chart]="dataList.chart"
+              [xaxis]="dataList.xaxis"
+              [plotOptions]="dataList.plotOptions"
+              ></apx-chart>
+          </div>
+
+    </div>
+    
+</div>  

@@ -1,0 +1,35 @@
+<div class="navbar-nav bg-dark">
+
+  <span class="navbar-nav float-start me-auto bg-dark">
+  </span>
+
+  <span class="navbar-nav bg-dark d-none d-md-block mt-3 me-5" aria-haspopup="true" aria-expanded="false">
+    <span class="nav-item mt-3">
+      <input type="search" placeholder="   Search Leads" aria-label="Search">
+      <button class="roundedd text-light ms-2"><i class="bi bi-plus-lg"></i> Add Leads</button>
+    </span>
+  </span>
+
+  <ul class="navbar-nav float-end bg-dark">
+
+    <li class="nav-item" placement="bottom-end">
+      <a class="nav-link waves-effect waves-dark pro-pic">
+        <img [src]=imageURL alt="user" class="rounded-circle" width="40" />
+        <span class="ms-2 text-light">{{name}}</span><br>
+      </a>
+    </li>
+
+    <li class="nav-item" placement="bottom-end">
+      <button class="roundeddi text-light me-2 mt-3"><i class="bi bi-nut" style="font-size: 25px;"></i></button>
+
+    </li>
+
+    <li class="nav-item" placement="bottom-end">
+      <button class="roundeddi text-light ms-2 mt-3 me-2"><i class="bi bi-box-arrow-right" (click)="Logout()" style="font-size: 25px;"></i></button>
+
+    </li>
+
+  </ul>
+
+
+</div>

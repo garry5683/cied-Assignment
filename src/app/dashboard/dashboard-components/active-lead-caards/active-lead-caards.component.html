@@ -1,0 +1,13 @@
+<div class="d-flex row mb-3">
+    <h4 class="text-black col-lg-4 col-md-12">Active leads status</h4>
+</div>
+<div class="row justify-content-md-center" >
+    <div class="col" *ngFor='let carddata of dataList'>
+        <div class="card rounded-3">    
+            <div class="card-body">
+                <p class="card-title fs-4">{{carddata.name}}</p>
+                <p class="card-subtitle"><strong>{{carddata.lead_count}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
