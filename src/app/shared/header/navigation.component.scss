@@ -15,3 +15,12 @@ input{
     border: 0px;
     background-color: #3e3d3d;
 }
+
+.circle {
+    clip-path: circle();
+  }
+  
+  .circle-icon {
+    color: #35383e;
+    cursor: pointer;
+  }

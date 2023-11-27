@@ -40,7 +40,6 @@ grapgDtls(action:string){
       this.wonCount=result['data']['stage_type_count'].find(s => s['stage_type'] === "won")['value']
       this.lostCount=result['data']['stage_type_count'].find(s => s['stage_type'] === "lost")['value']
 
-      // this.graphList=result['data']['graph']
       let categories=[]
       let data=[]
       result['data']['graph'].forEach(element => {
@@ -48,38 +47,53 @@ grapgDtls(action:string){
         categories.push(element.stage_name)
       })
 
-
       this.graphList = {
         series: [
           {
-            name: "",
+            name: "Lead list",
             data: data
           }
-        ],
-        colors: [
-          '#D3DFFB',
-          '#A7BFF4',
-          '#7C9EF2',
-          '#507EEC',
-          '#3454CF',
         ],
         chart: {
           height: 180,
           type: "bar",
-          toolbar: {
-            show: false,
-          }
+          toolbar: {show: false}
         },
+        colors: [
+          "#D3DFFB",
+          "#A7BFF4",
+          "#7C9EF2",
+          "#507EEC",
+          "#3454CF"
+        ],
         plotOptions: {
           bar: {
-            horizontal: false,
-            distributed: false,
-          },
+            columnWidth: "25%",
+            distributed: true
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        legend: {
+          show: false
+        },
+        grid: {
+          show: true
         },
         xaxis: {
           categories: [
             ['Contact' , 'Made'],['Initial' , 'Interest'],['First intro' , 'meeting'],['Follow Up' , 'Meetings' ],['Workshops' , 'Stage']
-          ]
+          ],
+          axisTicks: {
+            show: false
+          }
+        },
+        tooltip: {
+          enabled: false,
+        },
+        yaxis:{
+          tickAmount : 0
         }
       };
     });

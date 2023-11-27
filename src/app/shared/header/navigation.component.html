@@ -19,15 +19,13 @@
       </a>
     </li>
 
-    <li class="nav-item" placement="bottom-end">
-      <button class="roundeddi text-light me-2 mt-3"><i class="bi bi-nut" style="font-size: 25px;"></i></button>
+    <div class="settings circle circle-icon bg-secondary p-2 d-flex justify-content-center align-items-center me-2">
+    <i class="bi bi-gear text-white"></i>
+  </div>
 
-    </li>
-
-    <li class="nav-item" placement="bottom-end">
-      <button class="roundeddi text-light ms-2 mt-3 me-2"><i class="bi bi-box-arrow-right" (click)="Logout()" style="font-size: 25px;"></i></button>
-
-    </li>
+    <div (click)="Logout()" class="logout circle circle-icon bg-secondary p-2 d-flex justify-content-center align-items-center">
+    <i class="bi bi-box-arrow-right text-white"></i>
+  </div>
 
   </ul>
 
